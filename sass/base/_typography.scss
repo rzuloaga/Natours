@@ -4,7 +4,7 @@ body {
     /* font-size: 16px; */
     line-height: 1.7;
     color: $color-grey-dark;
-    padding: 5vh;
+    padding: $body-padding;
 }
 
 .heading-primary {
@@ -12,6 +12,7 @@ body {
     text-transform: uppercase;
     margin-bottom: 6rem;
 
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden; /* Helps to avoid shakiness in animations */
 
     &--main {

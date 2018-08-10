@@ -10,6 +10,7 @@
         position: relative;
         font-size: $default-font-size;
     
+        -webkit-backface-visibility: hidden;
         backface-visibility: hidden; /* Helps to avoid shakiness in animations */
     }
     
@@ -47,6 +48,15 @@
         
         &::after {
             background-color: $color-white;
+        }
+    }
+
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+        
+        &::after {
+            background-color: $color-primary;
         }
     }
     
