@@ -1,20 +1,20 @@
 .u-center-text {
-  text-align: center; }
+  text-align: center !important; }
 
 .u-margin-bottom-small {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem !important; }
 
 .u-margin-bottom-medium {
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem !important; }
 
 .u-margin-bottom-big {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
 .u-margin-top-big {
-  margin-top: 8rem; }
+  margin-top: 8rem !important; }
 
 .u-margin-top-huge {
-  margin-top: 10rem; }
+  margin-top: 10rem !important; }
 
 .heading-secondary, .feature-box__icon {
   display: inline-block;
@@ -24,12 +24,12 @@
   -ms-background-clip: text;
   color: transparent; }
 
-.heading-primary, .btn:link, .btn:visited, .card__side, .feature-box, .story__caption {
+.heading-primary, .btn, .btn:link, .btn:visited, .card__side, .feature-box, .story__caption {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   /* Helps to avoid shakiness in animations */ }
 
-.card__cta, .story__image, .story__caption, .header__text-box {
+.card__cta, .form__radio-button::after, .story__image, .story__caption, .header__text-box {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -143,7 +143,7 @@ body {
     width: 100%;
     object-fit: cover; }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -151,12 +151,15 @@ body {
   border-radius: 5rem;
   transition: all .2s;
   position: relative;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer; }
 
-.btn:hover {
+.btn:hover, .btn:focus {
+  outline: none;
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-  .btn:hover::after {
+  .btn:hover::after, .btn:focus::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0; }
 
@@ -354,7 +357,8 @@ body {
   border: none;
   border-bottom: 3px solid transparent;
   width: 90%;
-  display: block; }
+  display: block;
+  transition: all .3s; }
   .form__input:focus {
     outline: none;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
@@ -379,6 +383,43 @@ body {
   transform: translateY(-4.2rem);
   opacity: 0;
   visibility: hidden; }
+
+.form__radio-group {
+  width: 50%;
+  display: inline-block;
+  position: relative; }
+
+.form__radio-input {
+  position: absolute;
+  left: .9rem;
+  top: .9rem;
+  opacity: 0; }
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4rem; }
+
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid #55c57a;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0; }
+  .form__radio-button::after {
+    content: '';
+    height: 1.3rem;
+    width: 1.3rem;
+    background-color: #55c57a;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity .2s; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1; }
 
 .story {
   width: 75%;
@@ -504,8 +545,7 @@ body {
   background-size: cover;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-  background-position: 50%;
-  height: 50rem; }
+  background-position: 50%; }
   .book__form {
     width: 50%;
     padding: 6rem; }
