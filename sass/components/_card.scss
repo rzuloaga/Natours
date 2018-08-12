@@ -22,7 +22,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        border-radius: 3px;
+        border-radius: $border-radius-default;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
         overflow: hidden;
         @extend %backface-visibility-hidden;
@@ -56,8 +56,8 @@
         background-blend-mode: screen;
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
+        border-top-left-radius: $border-radius-default;
+        border-top-right-radius: $border-radius-default;
 
         &--1 {
             background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(/img/nat-5.jpg);
