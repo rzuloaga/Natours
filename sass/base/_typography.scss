@@ -12,8 +12,7 @@ body {
     text-transform: uppercase;
     margin-bottom: 6rem;
 
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden; /* Helps to avoid shakiness in animations */
+    @extend %backface-visibility-hidden;
 
     &--main {
         display: block;

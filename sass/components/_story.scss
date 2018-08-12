@@ -22,9 +22,35 @@
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
+    position: relative;
   }
 
   &__image {
+    @extend %center-absolute;
     height: 100%;
+    transform: translate(-50%, -50%) scale(1.4);
+    transition: all .5s;
+  }
+
+  &__caption {
+    @extend %center-absolute;
+    @extend %backface-visibility-hidden;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+  }
+  
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__image {
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(3px) brightness(80%);
   }
 }

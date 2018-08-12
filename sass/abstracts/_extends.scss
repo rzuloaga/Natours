@@ -6,3 +6,15 @@
     -ms-background-clip: text;
     color: transparent;
 }
+
+%backface-visibility-hidden {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; /* Helps to avoid shakiness in animations */
+}
+
+%center-absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

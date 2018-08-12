@@ -10,8 +10,7 @@
         position: relative;
         font-size: $default-font-size;
     
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden; /* Helps to avoid shakiness in animations */
+        @extend %backface-visibility-hidden;
     }
     
     &:hover {
