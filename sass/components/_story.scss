@@ -19,7 +19,7 @@
     float: left;
     -webkit-shape-outside: circle(50% at 50% 50%);
     shape-outside: circle(50% at 50% 50%);
-    border-radius: 15rem;
+    border-radius: 50%;
     overflow: hidden;
     transform: translateX(-3rem) skewX($skew-y-default);
     position: relative;

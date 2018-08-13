@@ -8,9 +8,10 @@
     -webkit-text-fill-color: transparent;
 }
 
+/* Helps to avoid shakiness in animations */
 %backface-visibility-hidden {
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden; /* Helps to avoid shakiness in animations */
+    backface-visibility: hidden;
 }
 
 %center-absolute {
