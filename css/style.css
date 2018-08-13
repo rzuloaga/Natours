@@ -18,13 +18,14 @@
 
 .heading-secondary, .feature-box__icon {
   display: inline-block;
-  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-image: -webkit-linear-gradient(left, #7ed56f, #28b485);
   background-clip: text;
   -webkit-background-clip: text;
   -ms-background-clip: text;
-  color: transparent; }
+  color: #55c57a;
+  -webkit-text-fill-color: transparent; }
 
-.heading-primary, .btn, .btn:link, .btn:visited, .card__side, .feature-box, .story__caption {
+.heading-primary, .btn, .btn:link, .btn:visited, .card__side, .feature-box, .story__image, .story__caption {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   /* Helps to avoid shakiness in animations */ }
@@ -139,9 +140,11 @@ body {
   opacity: 0.15;
   overflow: hidden; }
   .bg-video__content {
-    height: 100%;
-    width: 100%;
-    object-fit: cover; }
+    object-fit: cover;
+    height: 100%; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 0) {
+      .bg-video__content {
+        width: 100%; } }
 
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -223,7 +226,7 @@ body {
   .card:hover .card__side--back {
     transform: rotateY(-360deg); }
   .card__side {
-    transition: all .8s ease;
+    -webkit-transition: all .8s ease;
     position: absolute;
     top: 0;
     left: 0;
@@ -439,8 +442,8 @@ body {
     float: left;
     -webkit-shape-outside: circle(50% at 50% 50%);
     shape-outside: circle(50% at 50% 50%);
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
+    border-radius: 15rem;
+    overflow: hidden;
     transform: translateX(-3rem) skewX(12deg);
     position: relative; }
   .story__image {
@@ -541,7 +544,8 @@ body {
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
 
 .book {
-  background-image: linear-gradient(calc(90deg + 12deg), rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(/img/nat-10.jpg);
+  background-image: -webkit-linear-gradient(calc(90deg + 12deg), rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(/img/nat-10.jpg);
+  background: rgba(255, 255, 255, 0.8);
   background-size: cover;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);

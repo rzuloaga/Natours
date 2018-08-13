@@ -40,12 +40,13 @@
 }
 
 .book {
-    background-image: linear-gradient(
+    background-image: -webkit-linear-gradient(
         calc(90deg + #{$skew-y-default}),
         rgba($color-white, .9) 0%,
         rgba($color-white, .9) 50%,
         transparent 50%),
         url(/img/nat-10.jpg);
+    background: rgba($color-white, .8);
     background-size: cover;
     border-radius: $border-radius-default;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .4);

@@ -1,10 +1,11 @@
 %gradient-background {
     display: inline-block;
-    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    background-image: -webkit-linear-gradient(left, $color-primary-light, $color-primary-dark);
     background-clip: text;
     -webkit-background-clip: text;
     -ms-background-clip: text;
-    color: transparent;
+    color: $color-primary;
+    -webkit-text-fill-color: transparent;
 }
 
 %backface-visibility-hidden {
