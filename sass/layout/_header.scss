@@ -28,14 +28,23 @@
         text-align: center;
     }
 
-    &__triangle {
+    &__triangle { // Hotfix to solve the laggy scroll with clipped header DO NOT REPLICATE
         position: absolute;
         right: -1px;
-        bottom: 0;
+        bottom: -1px;
         height: 25vh;
         width: calc(100% + 1px);
         background-color: $color-grey-light-1;
         -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%);
         clip-path: polygon(100% 0, 100% 100%, 0 100%);
+
+        @include respond(tab-port) {
+            bottom: -2px;
+        }
+        
+        @include respond(phone) {
+            bottom: -2px;
+            height: 15vh;
+        }
     }
 }
