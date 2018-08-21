@@ -26,6 +26,10 @@
         @extend %center-absolute;
         top: 40%;
         text-align: center;
+        
+        @include respond(phone) {
+            width: 100%;
+        }
     }
 
     &__triangle { // Hotfix to solve the laggy scroll with clipped header DO NOT REPLICATE
