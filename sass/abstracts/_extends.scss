@@ -1,11 +1,18 @@
 %gradient-background {
     display: inline-block;
-    background-image: -webkit-linear-gradient(left, $color-primary-light, $color-primary-dark);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -ms-background-clip: text;
     color: $color-primary;
-    -webkit-text-fill-color: transparent;
+    
+    @supports   (((background-clip: text) or
+    (-webkit-background-clip: text) or
+    (-ms-background-clip: text)) and
+    (-webkit-text-fill-color: transparent)) {
+        background-image: linear-gradient(left, $color-primary-light, $color-primary-dark);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -ms-background-clip: text;
+        color: $color-primary;
+        -webkit-text-fill-color: transparent;
+    }
 }
 
 /* Helps to avoid shakiness in animations */

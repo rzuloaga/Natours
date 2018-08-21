@@ -72,6 +72,10 @@
 
   &:hover &__image {
     transform: translate(-50%, -50%) scale(1);
-    filter: blur(3px) brightness(80%);
+    opacity: .9;
+    
+    @supports (filter: blur(1px)) and (filter: brightness(100%)) {
+      filter: blur(3px) brightness(80%);
+    }
   }
 }
