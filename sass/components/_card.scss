@@ -159,7 +159,8 @@
 
 
 
-    @include respond(tab-port) {
+    @media  only screen and (max-width: 56.25em),
+            only screen and (hover: none) { // In case the device can't hover
         // FUNCTIONALITY
         height: auto;
         border-radius: $border-radius-default;
